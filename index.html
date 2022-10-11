@@ -1,3 +1,4 @@
+<!--Metadata-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,8 +20,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <title>Work Day Scheduler</title>
   </head>
 
@@ -30,75 +29,59 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
+    <div class="container">
       <!-- Timeblocks go here -->
-      
-      <ul class="list-group">
-        <li class="list-group-item list-group-item-action" id="nineam">
-            <div class="d-flex align-self-start flex-row bd-highlight mb-3">
-              <div class="p-2 flex-fill bd-highlight"><ul id="nineamList">9am:</ul></div> 
-              <div class="p-2 bd-highlight"><input type="text" id="nineamText" placeholder="What to do?"> <input type="submit" id="addButtonNine"></div> 
-              <div></div>
-        </li>
-        <li class="list-group-item list-group-item-action" id="tenam">
-          <div class="d-flex align-self-start flex-row bd-highlight mb-3">
-            <div class="p-2 flex-fill bd-highlight"><ul id="tenamList">10am:</ul></div> 
-            <div class="p-2 bd-highlight"><input type="text" id="tenamText" placeholder="What to do?"> <input type="submit" id="addButtonTen"></div> 
-            <div></div>
-            </li>
+      <!--container - row - col -textarea -button -->
+      <div class="row time-block" id="block9am">
+        <div class="col-md-1 hour">9am</div>
+        <textarea class="col-md-10 description" id="nineAmText"></textarea>
+        <button class="col-md-1 saveBtn btns"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row time-block" id="block10am">
+        <div class="col-md-1 hour">10am</div>
+        <textarea class="col-md-10 description"></textarea>
+        <button class="col-md-1 saveBtn btns"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row time-block" id="block11am">
+        <div class="col-md-1 hour">11am</div>
+        <textarea class="col-md-10 description"></textarea>
+        <button class="col-md-1 saveBtn btns"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row time-block" id="blockNoon">
+        <div class="col-md-1 hour">Noon</div>
+        <textarea class="col-md-10 description"></textarea>
+        <button class="col-md-1 saveBtn btns"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row time-block" id="block1pm">
+        <div class="col-md-1 hour">1pm</div>
+        <textarea class="col-md-10 description"></textarea>
+        <button class="col-md-1 saveBtn btns"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row time-block"id="block2pm">
+        <div class="col-md-1 hour" >2pm</div>
+        <textarea class="col-md-10 description"></textarea>
+        <button class="col-md-1 saveBtn btns"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row time-block" id="block3pm">
+        <div class="col-md-1 hour">3pm</div>
+        <textarea class="col-md-10 description"></textarea>
+        <button class="col-md-1 saveBtn btns"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row time-block" id="block4pm">
+        <div class="col-md-1 hour">4pm</div>
+        <textarea class="col-md-10 description"></textarea>
+        <button class="col-md-1 saveBtn btns"><i class="fas fa-save"></i></button>
+      </div>
+      <div class="row time-block" id="block5pm">
+        <div class="col-md-1 hour">5pm</div>
+        <textarea class="col-md-10 description"></textarea>
+        <button class="col-md-1 saveBtn btns"><i class="fas fa-save"></i></button>
+      </div>
+    </div>
 
-        <li class="list-group-item list-group-item-action" id="elevenam"> 
-          <div class="d-flex align-self-start flex-row bd-highlight mb-3">
-            <div class="p-2 flex-fill bd-highlight"><ul id="elevenamList">11am:</ul></div> 
-            <div class="p-2 bd-highlight"><input type="text" id="elevenamText" placeholder="What to do?"> <input type="submit" id="addButtonEleven"></div> 
-            <div></div>
-      </li>
-
-        <li class="list-group-item list-group-item-action" id="noon"> 
-          <div class="d-flex align-self-start flex-row bd-highlight mb-3">
-            <div class="p-2 flex-fill bd-highlight"><ul id="noonList">Noon:</ul></div> 
-            <div class="p-2 bd-highlight"><input type="text" id="noonText" placeholder="What to do?"> <input type="submit" id="addButtonNoon"></div> 
-            <div></div>
-      </li>
-
-        <li class="list-group-item list-group-item-action" id="onepm"> 
-          <div class="d-flex align-self-start flex-row bd-highlight mb-3">
-            <div class="p-2 flex-fill bd-highlight"><ul id="onepmList">1pm:</ul></div> 
-            <div class="p-2 bd-highlight"><input type="text" id="onepmText" placeholder="What to do?"> <input type="submit" id="addButtonOne"></div> 
-            <div></div>
-      </li>
-
-        <li class="list-group-item list-group-item-action" id="twopm"> 
-          <div class="d-flex align-self-start flex-row bd-highlight mb-3">
-            <div class="p-2 flex-fill bd-highlight"><ul id="twopmList">2pm:</ul></div> 
-            <div class="p-2 bd-highlight"><input type="text" id="twopmText" placeholder="What to do?"> <input type="submit" id="addButtonTwo"></div> 
-            <div></div>
-      </li>
-
-        <li class="list-group-item list-group-item-action" id="threepm"> 
-          <div class="d-flex align-self-start flex-row bd-highlight mb-3">
-            <div class="p-2 flex-fill bd-highlight"><ul id="threepmList">3pm:</ul></div> 
-            <div class="p-2 bd-highlight"><input type="text" id="threepmText" placeholder="What to do?"> <input type="submit" id="addButtonThree"></div> 
-            <div></div>
-      </li>
-
-        <li class="list-group-item list-group-item-action" id="fourpm"> 
-          <div class="d-flex align-self-start flex-row bd-highlight mb-3">
-            <div class="p-2 flex-fill bd-highlight"><ul id="fourpmList">4pm:</ul></div> 
-            <div class="p-2 bd-highlight"><input type="text" id="fourpmText" placeholder="What to do?"> <input type="submit" id="addButtonFour"></div> 
-            <div></div>
-      </li>
-
-        <li class="list-group-item list-group-item-action" id="fivepm"> 
-          <div class="d-flex align-self-start flex-row bd-highlight mb-3">
-            <div class="p-2 flex-fill bd-highlight"><ul id="fivepmList">5pm:</ul></div> 
-            <div class="p-2 bd-highlight"><input type="text" id="fivepmText" placeholder="What to do?"> <input type="submit" id="addButtonFive"></div> 
-            <div></div>
-      </li>
-
-    </class>
-
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="/assets/js/script.js"></script>
   </body>
 </html>
+

@@ -1,104 +1,103 @@
 //Current day header via Moment
 var currentDay = moment();
 $("#currentDay").text(currentDay.format("[Today is ]dddd, MMMM Do YYYY.[ The current time is ]h:mm:ss a."));
+var nineAmBlock = document.querySelector("#block9am")
+var tenAmBlock = document.querySelector("#block10am")
+var elevenAmBlock = document.querySelector("#block11am")
+var noonBlock = document.querySelector("#blockNoon")
+var onePmBlock = document.querySelector("#block1pm")
+var twoPmBlock = document.querySelector("#block2pm")
+var threePmBlock = document.querySelector("#block3pm")
+var fourPmBlock = document.querySelector("#block4pm")
+var fivePmBlock = document.querySelector("#block5pm")
 
-//Functionality for adding tasks to list
-$( document ).ready(()=>{
-    $( "#addButtonNine" ).on( "click",()=>{
-        $("#nineamList").append("<li>" + $("#nineamText").val() + "</li>");
-        nineamText.value = "";
-    });
-});
+var nineamText = $("#nineAmText")
+var toDo = $(nineamText.value)
 
-$( document ).ready(()=>{
-    $( "#addButtonTen" ).on( "click",()=>{
-        $("#tenamList").append("<li>" + $("#tenamText").val() + "</li>");
-        tenamText.value = "";
-    });
-});
+hours=[9, 10, 11, 12, 13, 14, 15, 16, 17]
+var container = document.querySelector(".container")
 
-$( document ).ready(()=>{
-    $( "#addButtonEleven" ).on( "click",()=>{
-        $("#elevenamList").append("<li>" + $("#elevenamText").val() + "</li>");
-        elevenamText.value = "";
-    });
-});
 
-$( document ).ready(()=>{
-    $( "#addButtonNoon" ).on( "click",()=>{
-        $("#noonList").append("<li>" + $("#noonText").val() + "</li>");
-        noonText.value = "";
-    });
-});
+for (let index= 0; index < hours.length; index++){
+    var outerDiv = document.createElement("div")
+    outerDiv.classList.add("row","timeblock")
+    
+};
 
-$( document ).ready(()=>{
-    $( "#addButtonOne" ).on( "click",()=>{
-        $("#onepmList").append("<li>" + $("#onepmText").val() + "</li>");
-        onepmText.value = "";
-    });
-});
 
-$( document ).ready(()=>{
-    $( "#addButtonTwo" ).on( "click",()=>{
-        $("#twopmList").append("<li>" + $("#twopmText").val() + "</li>");
-        twopmText.value = "";
-    });
-});
-
-$( document ).ready(()=>{
-    $( "#addButtonThree" ).on( "click",()=>{
-        $("#threepmList").append("<li>" + $("#threepmText").val() + "</li>");
-        threepmText.value = "";
-    });
-});
-
-$( document ).ready(()=>{
-    $( "#addButtonFour" ).on( "click",()=>{
-        $("#fourpmList").append("<li>" + $("#fourpmText").val() + "</li>");
-        fourpmText.value = "";
-    });
-});
-
-$( document ).ready(()=>{
-    $( "#addButtonFive" ).on( "click",()=>{
-        $("#fivepmList").append("<li>" + $("#fivepmText").val() + "</li>");
-        fivepmText.value = "";
-    });
-});
-//Resets input on submit
-$("#nineamText")[0].reset();
-
-//Change textarea background color based on time
-var checkTime = function () {
-
-    //Get Current time
-    var currentTime = moment().format('H');
-
-    //get all elements with class "taskarea"
-    var timeBlockElements = $("#nineam");
-
-    //loop through taskarea classes
-    for (var i = 0 ; i < timeBlockElements.length ; i++) {
-
-        //Get element i's ID as a string
-        var elementID = timeBlockElements[i].id;
-
-        //get element by ID
-        var manipID = document.getElementById(timeBlockElements[i].id)
-
-        //remove any old classes from element
-        $(timeBlockElements[i].id).removeClass(".present .past .future");
-
-        // apply new class if task is present/past/future
-        if (elementID < currentTime) {
-            $(manipID).addClass("past");
-        } else if (elementID > currentTime) {
-            $(manipID).addClass("future");
-        } else {
-            $(manipID).addClass("present");
+if (currentDay.format("HH") == 9) {
+    nineAmBlock.classList.add("present");
+    } else if (currentDay.format("HH") > 9) {
+            nineAmBlock.classList.add("past")
         }
-    }
-}
+      else if (currentDay.format("HH") < 9){
+            nineAmBlock.classList.add("future")
+        }
 
-// checkTime every 5 minutes
-setInterval(checkTime(), (1000 * 60) * 5);
+        if (currentDay.format("HH") == 10) {
+            tenAmBlock.classList.add("present");
+            } else if (currentDay.format("HH") > 10) {
+                    tenAmBlock.classList.add("past")
+                }
+              else if (currentDay.format("HH") < 10){
+                    tenAmBlock.classList.add("future")
+                }
+                if (currentDay.format("HH") == 11) {
+                    elevenAmBlock.classList.add("present");
+                    } else if (currentDay.format("HH") > 11) {
+                            elevenAmBlock.classList.add("past")
+                        }
+                      else if (currentDay.format("HH") < 11){
+                            elevenAmBlock.classList.add("future")
+                        }
+                        
+        if (currentDay.format("HH") == 12) {
+            noonBlock.classList.add("present");
+            } else if (currentDay.format("HH") > 12) {
+                    noonBlock.classList.add("past")
+                }
+              else if (currentDay.format("HH") < 12){
+                    noonBlock.classList.add("future")
+                }
+                if (currentDay.format("HH") == 13) {
+                    onePmBlock.classList.add("present");
+                    } else if (currentDay.format("HH") > 13) {
+                            onePmBlock.classList.add("past")
+                        }
+                      else if (currentDay.format("HH") < 13){
+                            onePmBlock.classList.add("future")
+                        }
+                        if (currentDay.format("HH") == 14) {
+                            twoPmBlock.classList.add("present");
+                            } else if (currentDay.format("HH") > 14) {
+                                    twoPmBlock.classList.add("past")
+                                }
+                              else if (currentDay.format("HH") < 14){
+                                    twoPmBlock.classList.add("future")
+                                }
+                                if (currentDay.format("HH") == 15) {
+                                    threePmBlock.classList.add("present");
+                                    } else if (currentDay.format("HH") > 15) {
+                                            threePmBlock.classList.add("past")
+                                        }
+                                      else if (currentDay.format("HH") < 15){
+                                            threePmBlock.classList.add("future")
+                                        }
+    
+                                        if (currentDay.format("HH") == 16) {
+                                            fourPmBlock.classList.add("present");
+                                            } else if (currentDay.format("HH") > 16) {
+                                                    fourPmBlock.classList.add("past")
+                                                }
+                                              else if (currentDay.format("HH") < 16){
+                                                    fourPmBlock.classList.add("future")
+                                                }
+                                                if (currentDay.format("HH") == 17) {
+                                                    fivePmBlock.classList.add("present");
+                                                    } else if (currentDay.format("HH") > 17) {
+                                                            threePmBlock.classList.add("past")
+                                                        }
+                                                      else if (currentDay.format("HH") < 17){
+                                                            fivePmBlock.classList.add("future")
+                                                        }
+                    
