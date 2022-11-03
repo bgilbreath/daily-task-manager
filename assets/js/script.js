@@ -22,7 +22,7 @@ for (let index= 0; index < hours.length; index++){
     
 };
 
-
+//Timeblock color based on current time. Code needs cleaned up.
 if (currentDay.format("HH") == 9) {
     nineAmBlock.classList.add("present");
     } else if (currentDay.format("HH") > 9) {
@@ -104,7 +104,7 @@ if (currentDay.format("HH") == 17) {
             fivePmBlock.classList.add("future")
         }
 
-
+//Saves timeblock input item to local storage
 function saveTimeBlock(){
     var scheduleText = $(this).siblings("textarea").eq(0).val()
     var time = $(this).siblings(".hour").eq(0).text()
@@ -120,6 +120,7 @@ function saveTimeBlock(){
     localStorage.setItem("schedule", JSON.stringify(schedule));
 }
 
+//Loads timeblock input items from local storage. Needs fixed.
 function loadTimeBlock(){
     var schedule = JSON.parse(localStorage.getItem("schedule"));
     if (schedule === null){
@@ -130,6 +131,7 @@ function loadTimeBlock(){
     textarea.value = JSON.stringify(schedule);
 }
 
+//Initializes functions
 $(function(){
     loadTimeBlock();
     $(".saveBtn").on("click", saveTimeBlock);
