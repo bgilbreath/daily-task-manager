@@ -9,7 +9,7 @@ A work-day scheduler which tells you the current time and logs your tasks to kee
 
 ## Installation
 
-Project is a completed webpage, that can be visited via URL, 
+Project is a completed webpage, that can be visited via URL, https://bgilbreath.github.io/daily-task-manager/
 
 ## Usage
 
