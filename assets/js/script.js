@@ -98,7 +98,7 @@ if (currentDay.format("HH") == 16) {
 if (currentDay.format("HH") == 17) {
     fivePmBlock.classList.add("present");
     } else if (currentDay.format("HH") > 17) {
-            threePmBlock.classList.add("past")
+            fivePmBlock.classList.add("past")
         }
         else if (currentDay.format("HH") < 17){
             fivePmBlock.classList.add("future")
